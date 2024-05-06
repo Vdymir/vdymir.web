@@ -1,0 +1,93 @@
+---
+import Github from "../../../shared/icons/Github.astro";
+import Android from "../../../shared/icons/android.astro";
+import AstroIcon from "../../../shared/icons/astroIcon.astro";
+import Aws from "../../../shared/icons/aws.astro";
+import Docker from "../../../shared/icons/docker.astro";
+import Git from "../../../shared/icons/git.astro";
+import Js from "../../../shared/icons/js.astro";
+import Nestjs from "../../../shared/icons/nestjs.astro";
+import Next from "../../../shared/icons/next.astro";
+import Node from "../../../shared/icons/node.astro";
+import React from "../../../shared/icons/react.astro";
+import Swift from "../../../shared/icons/swift.astro";
+import Tailwind from "../../../shared/icons/tailwind.astro";
+import Typescript from "../../../shared/icons/typescript.astro";
+import Vue from "../../../shared/icons/vue.astro";
+
+const listOfSkills = [
+  {
+    title: "Js",
+    icon: Js,
+  },
+  {
+    title: "Ts",
+    icon: Typescript,
+  },
+  {
+    title: "React",
+    icon: React,
+  },
+  {
+    title: "Next.js",
+    icon: Next,
+  },
+  {
+    title: "Swift",
+    icon: Swift,
+  },
+  {
+    title: "Android",
+    icon: Android,
+  },
+  {
+    title: "Vue",
+    icon: Vue,
+  },
+  {
+    title: "Astro",
+    icon: AstroIcon,
+  },
+  {
+    title: "Tailwind",
+    icon: Tailwind,
+  },
+  {
+    title: "Aws",
+    icon: Aws,
+  },
+  {
+    title: "Docker",
+    icon: Docker,
+  },
+  {
+    title: "Node",
+    icon: Node,
+  },
+  {
+    title: "Nest.js",
+    icon: Nestjs,
+  },
+  {
+    title: "Github",
+    icon: Github,
+  },
+  {
+    title: "Git",
+    icon: Git,
+  },
+];
+---
+
+<section class="flex flex-col items-center justify-between w-full">
+  <h2 class="text-[var(--dark-green)] text-4xl font-bold mb-16">Main skills</h2>
+  <div class="flex items-center gap-8 flex-wrap justify-center">
+    {
+      listOfSkills.map(({ title, icon: Icon }) => (
+        <div title={title}>
+          <Icon size="80px" class="hover:scale-125 transition-all" />
+        </div>
+      ))
+    }
+  </div>
+</section>

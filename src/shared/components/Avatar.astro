@@ -1,0 +1,13 @@
+---
+interface Props {
+  image: string;
+}
+
+const { image } = Astro.props;
+---
+
+<div
+  class="bg-[var(--dark-green)] p-4 rounded-full flex items-center justify-center w-64 h-64 overflow-hidden shadow-lg shadow-[var(--green)]"
+>
+  <img alt="avatar" src={image} class="w-64 h-64 object-cover" />
+</div>

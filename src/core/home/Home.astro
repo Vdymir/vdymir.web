@@ -1,0 +1,53 @@
+---
+import Github from "../../shared/icons/Github.astro";
+import LinkedIn from "../../shared/icons/LinkedIn.astro";
+import { GITHUB_URL, LINKEDIN_URL } from "../../shared/constant";
+import AvatarSkills from "./components/AvatarSkills.astro";
+import Avatar from "../../shared/components/Avatar.astro";
+import SkillsSection from "./components/SkillsSection.astro";
+---
+
+<main class="w-full flex flex-col items-center max-w-[1200px] gap-60">
+  <section class="flex items-center justify-between w-full mt-44">
+    <div>
+      <p class="text-[var(--dark-green)]">Hello! I'm</p>
+      <h1 class="text-[var(--dark-green)] text-7xl font-semibold">Vladimir</h1>
+      <h2 class="text-[var(--dark-green)] text-7xl font-semibold">Castañeda</h2>
+      <h4 class="text-[var(--dark-green)] text-xl font-medium">
+        Sowftware Develpor
+      </h4>
+      <div class="flex items-center mt-4 gap-6">
+        <a href={GITHUB_URL} target="_blank">
+          <Github />
+        </a>
+        <a href={LINKEDIN_URL} target="_blank">
+          <LinkedIn />
+        </a>
+        <a
+          href="../../../public/vladimir_cv.pdf"
+          target="_blank"
+          class="h-[40px] w-28 bg-black text-center rounded-3xl flex items-center justify-center shadow-md shadow-[var(--dark-green)] hover:cursor-pointer hover:scale-105 transition-all"
+        >
+          <p class="text-white uppercase font-semibold">See CV</p>
+        </a>
+      </div>
+    </div>
+    <AvatarSkills />
+  </section>
+  <section class="flex items-center justify-between w-full">
+    <Avatar image="/avatar_thinking.webp" />
+    <article class="w-[600px] rounded">
+      <h2 class="text-[var(--dark-green)] text-4xl font-bold mb-4">About me</h2>
+      <p class="text-lg font-medium text-[var(--dark-green)]">
+        After 3 years in software development, the motivation behind my passion
+        for software engineering is a strong belief that programming is a means
+        for self-expression. When I design an app, I enjoy the process of
+        finding code that is creative, elegant, and practical. I want to immerse
+        myself in a community of people campaigning for innovation and
+        collaboration. I have a customer service mindset with a strong bias
+        toward action.
+      </p>
+    </article>
+  </section>
+  <SkillsSection />
+</main>

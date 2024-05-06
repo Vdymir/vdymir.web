@@ -1,0 +1,31 @@
+---
+import Avatar from "../../../shared/components/Avatar.astro";
+import Android from "../../../shared/icons/android.astro";
+import Aws from "../../../shared/icons/aws.astro";
+import Docker from "../../../shared/icons/docker.astro";
+import Figma from "../../../shared/icons/figma.astro";
+import Js from "../../../shared/icons/js.astro";
+import Linux from "../../../shared/icons/linux.astro";
+import Next from "../../../shared/icons/next.astro";
+import React from "../../../shared/icons/react.astro";
+import Slack from "../../../shared/icons/slack.astro";
+import Swift from "../../../shared/icons/swift.astro";
+import Typescript from "../../../shared/icons/typescript.astro";
+import Vue from "../../../shared/icons/vue.astro";
+---
+
+<div class="relative">
+  <Js class="rotate-12 absolute -top-8" />
+  <Linux class="-rotate-12 absolute -bottom-10" />
+  <Figma class="rotate-12 absolute -bottom-16 left-32" />
+  <Typescript class="-rotate-12 absolute -right-10 top-10" />
+  <Swift class="rotate-12 absolute -left-20 top-16" />
+  <Docker class="rotate-12 absolute -left-16 top-32" />
+  <Vue class="rotate-12 absolute -top-10 -right-10" />
+  <React class="absolute -bottom-1 -right-5" />
+  <Android class="absolute -top-20 left-20" />
+  <Slack class="absolute -right-16 top-32" />
+  <Aws class="absolute -bottom-24 left-16" />
+  <Next class="absolute -bottom-24 right-1" />
+  <Avatar image="/avatar.webp" />
+</div>

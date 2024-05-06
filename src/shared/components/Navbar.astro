@@ -1,0 +1,20 @@
+---
+const list = [
+  { value: "Home", href: "/" },
+  { value: "Experience", href: "#xperience" },
+  { value: "Contact me", href: "#contact_me" },
+  { value: "Blog", href: "/blog" },
+];
+---
+
+<nav class="max-w-[1200px] w-full p-10 flex items-center justify-end">
+  <ul class="flex items-center gap-4">
+    {
+      list.map((item) => (
+        <li class="text-[var(--dark-green)] border-b-2 border-transparent text-lg hover:border-[var(--dark-green)] hover:scale-105 transition-all px-2">
+          <a href={item.href}>{item.value}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
