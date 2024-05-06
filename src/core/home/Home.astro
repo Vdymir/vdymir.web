@@ -5,13 +5,12 @@ import { GITHUB_URL, LINKEDIN_URL } from "../../shared/constant";
 import AvatarSkills from "./components/AvatarSkills.astro";
 import Avatar from "../../shared/components/Avatar.astro";
 import SkillsSection from "./components/SkillsSection.astro";
+import CardExperience from "./components/CardExperience.astro";
 ---
 
-<main
-  class="w-full flex flex-col items-center max-w-[1200px] gap-32 lg:gap-52 px-10 lg:p-0"
->
+<main class="w-full flex flex-col items-center gap-32 lg:p-0">
   <section
-    class="flex flex-col lg:flex-row gap-32 items-center lg:justify-between w-full mt-10 lg:mt-44"
+    class="flex flex-col lg:flex-row gap-32 items-center lg:justify-between w-full max-w-[1200px] mt-10 lg:mt-44"
   >
     <div>
       <p class="text-[var(--dark-green)]">Hello! I'm</p>
@@ -39,25 +38,27 @@ import SkillsSection from "./components/SkillsSection.astro";
     <AvatarSkills />
   </section>
   <section
-    class="flex flex-col-reverse lg:flex-row gap-10 mt-10 lg:mt-0 lg:gap-0 items-center lg:justify-between w-full"
+    class="flex flex-col items-center w-full px-8 py-14 bg-[var(--green)] lg:py-36 lg:mt-24"
   >
-    <Avatar image="/avatar_thinking.webp" />
-    <article class="lg:w-[600px]">
-      <h2
-        class="text-[var(--dark-green)] text-center lg:text-start text-4xl font-bold mb-4"
-      >
-        About me
-      </h2>
-      <p class="text-lg font-medium text-[var(--dark-green)]">
-        After 3 years in software development, the motivation behind my passion
-        for software engineering is a strong belief that programming is a means
-        for self-expression. When I design an app, I enjoy the process of
-        finding code that is creative, elegant, and practical. I want to immerse
-        myself in a community of people campaigning for innovation and
-        collaboration. I have a customer service mindset with a strong bias
-        toward action.
-      </p>
-    </article>
+    <div
+      class="flex flex-col-reverse lg:flex-row gap-10 lg:gap-0 items-center lg:justify-between w-full max-w-[1200px] text-[var(--bone)]"
+    >
+      <Avatar image="/avatar_thinking.webp" />
+      <article class="lg:w-[600px]">
+        <h2 class="text-center lg:text-start text-4xl font-bold mb-4">
+          About me
+        </h2>
+        <p class="text-lg font-medium">
+          After 3 years in software development, the motivation behind my
+          passion for software engineering is a strong belief that programming
+          is a means for self-expression. When I design an app, I enjoy the
+          process of finding code that is creative, elegant, and practical. I
+          want to immerse myself in a community of people campaigning for
+          innovation and collaboration. I have a customer service mindset with a
+          strong bias toward action.
+        </p>
+      </article>
+    </div>
   </section>
   <SkillsSection />
 </main>
