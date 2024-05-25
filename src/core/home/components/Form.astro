@@ -1,0 +1,80 @@
+---
+import Input from "../../../shared/components/Input.astro";
+---
+
+<section
+  class="flex flex-col items-centerjustify-between max-w-[1200px] px-8 lg:px-0 lg:mt-22"
+  id="skills"
+>
+  <div
+    class="bg-white p-8 rounded-md shadow-lg shadow-black flex flex-col items-center"
+  >
+    <h2 class="text-center lg:text-start text-4xl font-bold mb-4">
+      Contact me
+    </h2>
+    <form class="w-[400px] flex flex-col gap-5" method="post" id="form">
+      <input
+        type="hidden"
+        name="access_key"
+        value={import.meta.env.WEB3FORMS_KEY}
+      />
+      <Input label="Email" type="email" name="email" required />
+      <Input label="Subject" type="text" name="subject" required />
+      <label class="text-[var(--green)] text-sm font-medium">
+        Description
+        <textarea
+          name="message"
+          required
+          placeholder="Your Message"
+          class="w-full px-4 py-3 border border-[var(--green)] mt-1 placeholder:text-slate-400 text-[var(--dark-green)] font-semibold rounded-sm outline-none h-36 focus:ring-4 border-slate-300 focus:border-[var(--green)] ring-slate-100"
+        ></textarea>
+      </label>
+      <button
+        class="w-full bg-[var(--green)] py-3 rounded flex flex-col items-center hover:bg-[var(--dark-green)]"
+      >
+        <p class="text-[var(--bone)] uppercase font-semibold">Send</p>
+      </button>
+      <div id="result" class="text-black text-center"></div>
+    </form>
+  </div>
+</section>
+<script is:inline>
+  const form = document.getElementById("form");
+  const result = document.getElementById("result");
+
+  form.addEventListener("submit", function (e) {
+    const formData = new FormData(form);
+    e.preventDefault();
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 3000);
+      });
+  });
+</script>

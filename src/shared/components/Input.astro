@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"input"> {
+  error?: string;
+  label: string;
+}
+
+const { error, label, class: className, ...rest } = Astro.props;
+---
+
+<div>
+  <label class="text-[var(--green)] text-sm font-medium">
+    {label}
+    <input
+      {...rest}
+      class={`w-full p-2 mt-1 border-b-2 border-[var(--green)] bg-[var(--light-green)] focus:outline-none text-[var(--dark-green)] font-semibold ${
+        error && "border-b-4 border-red-500"
+      } ${className}`}
+    />
+  </label>
+  {error && <p class="text-sm text-red-500">{error}</p>}
+</div>

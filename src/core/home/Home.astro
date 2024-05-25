@@ -5,7 +5,7 @@ import { GITHUB_URL, LINKEDIN_URL } from "../../shared/constant";
 import AvatarSkills from "./components/AvatarSkills.astro";
 import Avatar from "../../shared/components/Avatar.astro";
 import SkillsSection from "./components/SkillsSection.astro";
-import CardExperience from "./components/CardExperience.astro";
+import Form from "./components/Form.astro";
 ---
 
 <main class="w-full flex flex-col items-center gap-32 lg:p-0">
@@ -39,6 +39,7 @@ import CardExperience from "./components/CardExperience.astro";
   </section>
   <section
     class="flex flex-col items-center w-full px-8 py-14 bg-[var(--green)] lg:py-36 lg:mt-24"
+    id="about_me"
   >
     <div
       class="flex flex-col-reverse lg:flex-row gap-10 lg:gap-0 items-center lg:justify-between w-full max-w-[1200px] text-[var(--bone)]"
@@ -61,4 +62,15 @@ import CardExperience from "./components/CardExperience.astro";
     </div>
   </section>
   <SkillsSection />
+  <section
+    class="flex flex-col items-center w-full px-8 pb-14 pt-10 bg-[var(--green)] lg:py-36 lg:mt-14"
+    id="projects"
+  >
+    <h2
+      class="text-center lg:text-start text-4xl font-bold mb-4 text-[var(--bone)]"
+    >
+      Projects
+    </h2>
+  </section>
+  <Form />
 </main>
