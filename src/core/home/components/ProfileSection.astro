@@ -1,0 +1,35 @@
+---
+import { GITHUB_URL, LINKEDIN_URL } from "../../../shared/constant";
+import Github from "../../../shared/icons/Github.astro";
+import LinkedIn from "../../../shared/icons/LinkedIn.astro";
+import AvatarSkills from "./AvatarSkills.astro";
+---
+
+<section
+  class="flex flex-col lg:flex-row gap-32 items-center lg:justify-between w-full max-w-[1200px] mt-10 lg:mt-44"
+>
+  <div>
+    <p class="text-[var(--dark-green)]">Hello! I'm</p>
+    <h1 class="text-[var(--dark-green)] text-7xl font-semibold">Vladimir</h1>
+    <h2 class="text-[var(--dark-green)] text-7xl font-semibold">Castañeda</h2>
+    <h4 class="text-[var(--dark-green)] text-xl font-medium">
+      Sowftware Develpor
+    </h4>
+    <div class="flex items-center mt-4 gap-6">
+      <a href={GITHUB_URL} target="_blank">
+        <Github />
+      </a>
+      <a href={LINKEDIN_URL} target="_blank">
+        <LinkedIn />
+      </a>
+      <a
+        href="../../../public/vladimir_cv.pdf"
+        target="_blank"
+        class="h-[40px] w-28 bg-black text-center rounded-3xl flex items-center justify-center shadow-md shadow-[var(--dark-green)] hover:cursor-pointer hover:scale-105 transition-all"
+      >
+        <p class="text-white uppercase font-semibold">See CV</p>
+      </a>
+    </div>
+  </div>
+  <AvatarSkills />
+</section>

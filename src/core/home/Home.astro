@@ -1,76 +1,15 @@
 ---
-import Github from "../../shared/icons/Github.astro";
-import LinkedIn from "../../shared/icons/LinkedIn.astro";
-import { GITHUB_URL, LINKEDIN_URL } from "../../shared/constant";
-import AvatarSkills from "./components/AvatarSkills.astro";
-import Avatar from "../../shared/components/Avatar.astro";
 import SkillsSection from "./components/SkillsSection.astro";
-import Form from "./components/Form.astro";
+import FormSection from "./components/FormSection.astro";
+import ProjectSection from "./components/ProjectSection.astro";
+import AboutMeSection from "./components/AboutMeSection.astro";
+import ProfileSection from "./components/ProfileSection.astro";
 ---
 
 <main class="w-full flex flex-col items-center gap-32 lg:p-0">
-  <section
-    class="flex flex-col lg:flex-row gap-32 items-center lg:justify-between w-full max-w-[1200px] mt-10 lg:mt-44"
-  >
-    <div>
-      <p class="text-[var(--dark-green)]">Hello! I'm</p>
-      <h1 class="text-[var(--dark-green)] text-7xl font-semibold">Vladimir</h1>
-      <h2 class="text-[var(--dark-green)] text-7xl font-semibold">Castañeda</h2>
-      <h4 class="text-[var(--dark-green)] text-xl font-medium">
-        Sowftware Develpor
-      </h4>
-      <div class="flex items-center mt-4 gap-6">
-        <a href={GITHUB_URL} target="_blank">
-          <Github />
-        </a>
-        <a href={LINKEDIN_URL} target="_blank">
-          <LinkedIn />
-        </a>
-        <a
-          href="../../../public/vladimir_cv.pdf"
-          target="_blank"
-          class="h-[40px] w-28 bg-black text-center rounded-3xl flex items-center justify-center shadow-md shadow-[var(--dark-green)] hover:cursor-pointer hover:scale-105 transition-all"
-        >
-          <p class="text-white uppercase font-semibold">See CV</p>
-        </a>
-      </div>
-    </div>
-    <AvatarSkills />
-  </section>
-  <section
-    class="flex flex-col items-center w-full px-8 py-14 bg-[var(--green)] lg:py-36 lg:mt-24"
-    id="about_me"
-  >
-    <div
-      class="flex flex-col-reverse lg:flex-row gap-10 lg:gap-0 items-center lg:justify-between w-full max-w-[1200px] text-[var(--bone)]"
-    >
-      <Avatar image="/avatar_thinking.webp" />
-      <article class="lg:w-[600px]">
-        <h2 class="text-center lg:text-start text-4xl font-bold mb-4">
-          About me
-        </h2>
-        <p class="text-lg font-medium">
-          After 3 years in software development, the motivation behind my
-          passion for software engineering is a strong belief that programming
-          is a means for self-expression. When I design an app, I enjoy the
-          process of finding code that is creative, elegant, and practical. I
-          want to immerse myself in a community of people campaigning for
-          innovation and collaboration. I have a customer service mindset with a
-          strong bias toward action.
-        </p>
-      </article>
-    </div>
-  </section>
+  <ProfileSection />
+  <AboutMeSection />
   <SkillsSection />
-  <section
-    class="flex flex-col items-center w-full px-8 pb-14 pt-10 bg-[var(--green)] lg:py-36 lg:mt-14"
-    id="projects"
-  >
-    <h2
-      class="text-center lg:text-start text-4xl font-bold mb-4 text-[var(--bone)]"
-    >
-      Projects
-    </h2>
-  </section>
-  <Form />
+  <ProjectSection />
+  <FormSection />
 </main>

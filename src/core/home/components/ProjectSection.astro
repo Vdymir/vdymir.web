@@ -1,0 +1,52 @@
+---
+import CardProject from "../../../shared/components/CardProject.astro";
+---
+
+<section
+  class="flex flex-col items-center w-full px-8 pb-14 pt-5 bg-[var(--green)] lg:py-36 lg:mt-14"
+  id="projects"
+>
+  <h2
+    class="text-center lg:text-start text-4xl font-bold mb-16 text-[var(--bone)]"
+  >
+    Projects
+  </h2>
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-4">
+    <CardProject
+      project_url="https://apps.apple.com/us/app/on-site-app/id6476200805?l=es-MX"
+      stack={[
+        "React-Navite",
+        "TypeScript",
+        "Zustand",
+        "Graphql",
+        "Sentry",
+        "Firebase",
+        "AWS-Amplify",
+      ]}
+      url_img="/on-site.webp"
+      title="On site"
+      description="On Site App transforms the way you explore our menu. Immerse yourself in a mouthwatering visual journey with high-definition images of every dish."
+    />
+    <CardProject
+      project_url="https://www.npmjs.com/package/rn-vdy-components"
+      stack={["React-Navite", "TypeScript"]}
+      url_img="/npm-logo.png"
+      title="rn-vdy-components"
+      description="I have developed a library of components for React Native, designed to streamline the development process and enhance the functionality. Includes versatile components that cater to various common needs, ensuring a robust and efficient development experience."
+    />
+    <CardProject
+      project_url="https://app-nails.vercel.app/auth/login"
+      stack={[
+        "Next.js",
+        "TypeScript",
+        "Next-Auth",
+        "Tailwind",
+        "React-hook-form",
+        "SWR",
+      ]}
+      url_img="/nails.png"
+      title="Nails"
+      description="Application to make reservations at a beauty salon, it has an administrative panel so that the owner can manage the scheduled appointments."
+    />
+  </div>
+</section>
